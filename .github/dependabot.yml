@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # surveille les dépendances NPM
+  - package-ecosystem: "npm"
+    # recherche les mises à jour toutes les 2 minutes
+    schedule:
+      interval: "2 minutes"
+    # applique les mises à jour pour les packages mineurs et patchs
+    # tout en respectant les contraintes de version existantes
+    # pour les mises à jour majeures
+    allow:
+      - dependency-type: "direct"
+        update-type: "patch"
+      - dependency-type: "direct"
+        update-type: "minor"
+        labels:
+          - "security"

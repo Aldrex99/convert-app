@@ -11,6 +11,7 @@ jobs:
           - name: Dependabot
             uses: dependabot/dependabot-core@master
             with:
-              config-file-path: .github/dependabot.yml
-
               github-token: ${{ secrets.GITHUB_TOKEN }}
+              directory: /
+              update: true
+              package_manager: "npm"
