@@ -1,0 +1,16 @@
+name: Dependabot version updates
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+jobs:
+    dependabot:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Dependabot
+            uses: dependabot/dependabot-core@master
+            with:
+              config-file-path: .github/dependabot.yml
+
+              github-token: ${{ secrets.GITHUB_TOKEN }}

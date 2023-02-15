@@ -10,6 +10,7 @@ const currency = {
 			result = value * dollarEgalEuro
 		}
 		res.send(JSON.stringify({result}));
+    return result;
 	}
 }
 

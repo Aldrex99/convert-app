@@ -1,1 +1,12 @@
-const assert = require("chai").assert;  function add(x, y) {   return x + y; }  describe("add", function () {   it("should add two numbers", function () {     assert.equal(add(1, 2), 3);   }); });
+// ultra light test
+
+let currency = require('../controllers/currencyController');
+const mocha = require('mocha');
+const chai = require('chai');
+const expect = chai.expect;
+
+describe('Currency', () => {
+  it('should return 0', () => {
+    expect(currency.convertCurrency({currency: "euros", convertTo: "dollars", value: 0})).to.equal(0);
+  });
+});
